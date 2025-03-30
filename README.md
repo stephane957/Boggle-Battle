@@ -18,9 +18,6 @@ A real-time 1v1 Boggle word game with simple matchmaking and scoring system.
 - Simple matchmaking system
 - Responsive game board
 
-## Project Structure 📂
-![Screenshot of the project structure for Boggle-Battle](/assets/project_structure.png)
-
 ## Local Setup 🛠️
 
 ### Prerequisites
@@ -31,17 +28,17 @@ A real-time 1v1 Boggle word game with simple matchmaking and scoring system.
 ### Installation
 1. Clone repository:
 ```
-git clone https://github.com/yourusername/boggle-battle.git
-cd boggle-battle
+git clone https://github.com/yourusername/Boggle-Battle.git
+cd Boggle-Battle
 ```
 - Frontend
 ```
-cd frontend
+cd boggle-frontend
 npm install
 ```
 - Backend
 ```
-cd backend
+cd boggle-backend
 python -m venv venv
 source venv\Scripts\activate  # Linux: venv/bin/activate
 pip install -r requirements.txt
@@ -49,7 +46,7 @@ pip install -r requirements.txt
 
 ### Configuration ⚙️
 - Backend (Flask): 
-Create *backend/config.py*:
+Create *boggle-backend/config.py*:
 ```
 import os
 
@@ -59,14 +56,14 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 ```
 - Frontend (React): 
-Create *.env* file in root of the frontend directory:
+Create *.env* file in root of the boggle-frontend directory:
 ```
 REACT_APP_API_URL=http://localhost:5000
 ```
 ### Database Setup 💾
 The SQLite database will be automatically created on first run. Initialize tables:
 ```
-cd backend
+cd boggle-backend
 flask shell
 >>> from app import db
 >>> db.create_all()
@@ -75,13 +72,18 @@ flask shell
 ### Running Locally 🖥️
 1. Start Backend
 ```
-cd backend
+cd boggle-backend
 flask run --port 5000
 ```
 2. Start Frontend
 ```
-cd frontend
+cd boggle-frontend
 npm start
+Starts the development server.
+
+npm run eject
+Removes this tool and copies build dependencies, configuration files
+and scripts into the app directory. If you do this, you can’t go back!
 ```
 Access: http://localhost:3000
 
@@ -98,12 +100,12 @@ Access: http://localhost:3000
 ### Testing 🧪
 Frontend
 ```
-cd frontend
+cd boggle-frontend
 npm test
 ```
 Backend
 ```
-cd backend
+cd boggle-backend
 pytest
 ```
 
