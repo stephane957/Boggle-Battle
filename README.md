@@ -19,7 +19,7 @@ A real-time 1v1 Boggle word game with simple matchmaking and scoring system.
 - Responsive game board
 
 ## Project Structure 📂
-
+![Screenshot of the project structure for Boggle-Battle](/assets/project_structure.png)
 
 ## Local Setup 🛠️
 
@@ -34,21 +34,21 @@ A real-time 1v1 Boggle word game with simple matchmaking and scoring system.
 git clone https://github.com/yourusername/boggle-battle.git
 cd boggle-battle
 ```
-Frontend
+- Frontend
 ```
 cd frontend
 npm install
 ```
-Backend
+- Backend
 ```
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv\Scripts\activate  # Linux: venv/bin/activate
 pip install -r requirements.txt
 ```
 
 ### Configuration ⚙️
-Backend (Flask)
+- Backend (Flask): 
 Create *backend/config.py*:
 ```
 import os
@@ -58,12 +58,12 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'sqlite:///boggle.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 ```
-Frontend (React)
+- Frontend (React): 
 Create *.env* file in root of the frontend directory:
 ```
 REACT_APP_API_URL=http://localhost:5000
 ```
-Database Setup 💾
+### Database Setup 💾
 The SQLite database will be automatically created on first run. Initialize tables:
 ```
 cd backend
@@ -89,17 +89,11 @@ Access: http://localhost:3000
 1. 3-minute rounds with 4x4 letter grid
 2. Players find words with adjacent letters
 3. Score based on word length:
-  - 3-4 letters: 1 point
-  - 5 letters: 2 points
-  - 6+ letters: 3 points
+      - 3-4 letters: 1 point
+      - 5 letters: 2 points
+      - 6+ letters: 3 points
 4. Duplicate words between players cancel out
 5. Highest score wins!
-
-API Endpoints 🔌
-Endpoint	        Method	Description
-/api/new-game	    POST	  Create new game session
-/api/submit-word	POST	  Validate and score word
-/api/game-status	GET	    Get current game state
 
 ### Testing 🧪
 Frontend
